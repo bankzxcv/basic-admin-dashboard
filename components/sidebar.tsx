@@ -1,6 +1,5 @@
 import {
   Command,
-  CommandDialog,
   CommandEmpty,
   CommandGroup,
   CommandInput,
@@ -20,7 +19,7 @@ const Sidebar = () => {
       <CommandList>
         <CommandEmpty>No results found.</CommandEmpty>
         <CommandGroup heading="Suggestions">
-          <CommandItem>
+          <CommandItem >
             <LayoutDashboard className="mr-2 h-4 w-4" />
             <Link href="/">Dashboard</Link>
           </CommandItem>
