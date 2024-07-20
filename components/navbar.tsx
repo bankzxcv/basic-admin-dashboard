@@ -1,3 +1,5 @@
+"use client"
+
 import { Avatar, AvatarImage } from "@/components/ui/avatar"
 import {
   DropdownMenu,
@@ -10,6 +12,7 @@ import {
 
 import Image from "next/image"
 import Link from "next/link"
+import ThemeToggler from "@/components/ThemeToggler"
 import logo from "../img/logo.png"
 
 const Navbar = () => {
@@ -19,23 +22,26 @@ const Navbar = () => {
         <Image src={logo} alt="Bank" width={40}></Image>
       </Link>
 
-      <DropdownMenu>
-        <DropdownMenuTrigger>
-          <Avatar>
-            <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn"></AvatarImage>
-          </Avatar>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent>
-          <DropdownMenuLabel>My Account</DropdownMenuLabel>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem>
-            <Link href="/profile">Profile</Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <Link href="/auth">Logout</Link>
-          </DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
+      <div className="flex item-center">
+        <ThemeToggler></ThemeToggler>
+        <DropdownMenu>
+          <DropdownMenuTrigger>
+            <Avatar>
+              <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn"></AvatarImage>
+            </Avatar>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent>
+            <DropdownMenuLabel>My Account</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>
+              <Link href="/profile">Profile</Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <Link href="/auth">Logout</Link>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
     </div>
   )
 }
